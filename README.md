@@ -6,7 +6,7 @@
 
 ## 🚀 Live Demo
 
-The application is deployed on **Vercel** and is accessible at: https://ecommerce-final-project-v2.vercel.app/
+The application is deployed on **Vercel** and is accessible at: https://freshcart-grocery-store.vercel.app/
 
 ## 📹 Video Demonstration
 
