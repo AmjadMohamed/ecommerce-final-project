@@ -113,7 +113,7 @@ const Navbar = () => {
                   ) : null}
                 </Link>
               </div>
-              
+
               <div className='relative'>
                 <Link href={"/cart"} className="relative p-2 rounded-md group flex items-center justify-center">
                   <i className={`fas fa-shopping-cart text-xl transition-colors duration-200 ${isActive("/cart") ? "text-green-600" : "text-gray-700 group-hover:text-green-600"}`}></i>
@@ -126,7 +126,7 @@ const Navbar = () => {
               </div>
 
               <button
-                className='px-4 py-2 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-md transition-all duration-200 font-medium cursor-pointer'
+                className='px-4 py-2 text-gray-700 hover:text-red-600 font-medium cursor-pointer'
                 onClick={() => signOut({
                   callbackUrl: "/signin"
                 })}
@@ -155,7 +155,7 @@ const Navbar = () => {
             <div className="flex flex-col space-y-4">
               {/* Mobile Navigation Links */}
               <NavList />
-              
+
               {/* Mobile Right Side - Cart, Wishlist, Sign Out */}
               {status === "authenticated" && (
                 <div className="flex justify-center gap-6 items-center pt-4 border-t border-gray-200">
@@ -169,7 +169,7 @@ const Navbar = () => {
                       ) : null}
                     </Link>
                   </div>
-                  
+
                   <div className='relative'>
                     <Link href={"/cart"} className="relative p-2 rounded-md group flex items-center justify-center">
                       <i className={`fas fa-shopping-cart text-xl transition-colors duration-200 ${isActive("/cart") ? "text-green-600" : "text-gray-700 group-hover:text-green-600"}`}></i>
@@ -182,7 +182,7 @@ const Navbar = () => {
                   </div>
 
                   <button
-                    className='px-4 py-2 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-md transition-all duration-200 font-medium cursor-pointer'
+                    className='px-4 py-2 text-gray-700 hover:text-red-600 font-medium cursor-pointer'
                     onClick={() => signOut({
                       callbackUrl: "/signin"
                     })}
