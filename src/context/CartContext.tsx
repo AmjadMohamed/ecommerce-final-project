@@ -40,8 +40,8 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
             return data;
 
         }
-        catch (error) {
-            console.log(error)
+        catch (_error) {
+            // Error handled silently
         }
     }
 
@@ -54,11 +54,9 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
             setTotalCartPrice(data.data.totalCartPrice);
             setProducts(data.data.products);
             setCartId(data.cartId);
-            console.log(data);
             setIsLoading(false);
 
-        } catch (error) {
-            console.log(error);
+        } catch (_error) {
             setIsLoading(false);
         }
     }
@@ -71,8 +69,8 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
             setProducts(data.data.products);
             return data;
 
-        } catch (error) {
-            console.log(error);
+        } catch (_error) {
+            // Error handled silently
         }
     }
 
@@ -86,8 +84,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
             setIsItemQuantityLoading("");
             return data;
 
-        } catch (error) {
-            console.log(error);
+        } catch (_error) {
             setIsItemQuantityLoading("");
         }
     }
@@ -98,8 +95,8 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
             setNumOfCartItems(0);
             setTotalCartPrice(0);
             setProducts([]);
-        } catch (error) {
-            console.log(error);
+        } catch (_error) {
+            // Error handled silently
         }
     }
 

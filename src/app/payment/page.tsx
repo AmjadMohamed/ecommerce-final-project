@@ -51,17 +51,15 @@ const Payment = () => {
 
       ResetDataAfterPayment();
       router.push("/allorders");
-      console.log(`payment ${data}`);
 
     }
-    catch (error) {
+    catch (_error) {
       toast.error("Failed", {
         position: "top-center",
         duration: 3000,
         icon: <i className="fa-solid fa-circle-xmark text-red-500"></i>
       })
 
-      console.log(error);
     }
   }
 
@@ -74,11 +72,9 @@ const Payment = () => {
       }
     }
 
-    console.log(`cartID: ${cartId}`);
 
     try {
       const data = await onlinePaymentAction(cartId, values);
-      console.log(data);
 
       toast.success(data.status, {
         position: "top-center",
@@ -91,14 +87,13 @@ const Payment = () => {
       }
 
     }
-    catch (error) {
+    catch (_error) {
       toast.error("Failed", {
         position: "top-center",
         duration: 3000,
         icon: <i className="fa-solid fa-circle-xmark text-red-500"></i>
       })
 
-      console.log(error);
     }
   }
 

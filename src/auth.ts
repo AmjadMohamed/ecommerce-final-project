@@ -24,7 +24,6 @@ export const authOptions = {
                     headers: { "Content-Type": "application/json" }
                 })
                 const payload = await response.json();
-                console.log(payload);
 
                 if (payload.message === 'success') {
                     const { id }: { id: string } = jwtDecode(payload.token) as { id: string };

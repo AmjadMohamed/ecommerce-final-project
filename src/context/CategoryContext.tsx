@@ -30,8 +30,7 @@ const CategoryContextProvider = ({ children }: { children: React.ReactNode }) =>
             const data = await getSubCategory(categoryId);
             setSubcategories(data);
             setIsLoading(false);
-        } catch (error) {
-            console.log(error);
+        } catch (_error) {
             setSubcategories([]);
             setIsLoading(false);
         }

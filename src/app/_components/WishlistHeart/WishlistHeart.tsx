@@ -33,8 +33,7 @@ const WishlistHeart = ({ productId }: { productId: string }) => {
                     icon: <i className="fa-solid fa-circle-xmark text-red-500"></i>
                 });
             }
-        } catch (error) {
-            console.error("Wishlist error:", error);
+        } catch (_error) {
             toast.error("Something went wrong", {
                 position: "top-center",
                 duration: 3000,

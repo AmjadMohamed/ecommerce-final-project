@@ -31,7 +31,6 @@ const WishlistContextProvider = ({ children }: { children: React.ReactNode }) =>
             return data;
         }
         catch (error) {
-            console.log(error)
             throw error;
         }
     }
@@ -44,8 +43,7 @@ const WishlistContextProvider = ({ children }: { children: React.ReactNode }) =>
             setNumOfWishlistItems(data.data.length);
             setWishlistIds(data.data.map((product: ProductRoot) => product._id));
             setIsLoading(false);
-        } catch (error) {
-            console.log(error);
+        } catch (_error) {
             setIsLoading(false);
         }
     }
@@ -55,9 +53,8 @@ const WishlistContextProvider = ({ children }: { children: React.ReactNode }) =>
             const data = await removeProductFromWishlistAction(id);
             getUserWishlistData();
             return data;
-        } catch (error) {
-            console.log(error);
-            throw error;
+        } catch (_error) {
+            throw _error;
         }
     }
 

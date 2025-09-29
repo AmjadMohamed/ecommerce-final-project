@@ -17,6 +17,5 @@ export async function clearCartAction() {
         }
     })
 
-    console.log(data);
     return data;
 }

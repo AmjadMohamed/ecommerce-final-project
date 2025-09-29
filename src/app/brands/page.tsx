@@ -6,7 +6,6 @@ import Image from "next/image";
 const Brands = async () => {
 
   const { data }: { data: BrandsRoot[] } = await GetAllBrands();
-  console.log(data);
 
   return (
     <div className='w-full md:w-[80%] mx-auto my-10 px-5 md:px-0 bg-slate-100'>

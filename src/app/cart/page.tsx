@@ -32,7 +32,6 @@ const Cart = () => {
       })
     }
 
-    console.log("deleted: " + data);
   };
 
   async function updateItemQuantity(id: string, count: number) {
@@ -53,7 +52,6 @@ const Cart = () => {
       })
     }
 
-    console.log("updated: " + data);
   };
 
   if (isLoading) {

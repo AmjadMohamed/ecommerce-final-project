@@ -17,6 +17,5 @@ export async function removeCartItemAction(id: string) {
         }
     })
 
-    console.log(data);
     return data;
 }

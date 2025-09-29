@@ -14,7 +14,6 @@ export async function getMyToken() {
         secret: process.env.NEXTAUTH_SECRET!
     });
 
-    console.log('tokendddd', decodedToken?.token);
-
+    
     return decodedToken?.token;
 }

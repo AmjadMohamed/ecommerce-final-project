@@ -10,7 +10,6 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
   const { id } = await params;
 
   const product: ProductRoot = await GetSingleProduct(id);
-  console.log(product);
 
   // Combine imageCover with additional images
   const allImages = [product.imageCover, ...(product.images || [])];

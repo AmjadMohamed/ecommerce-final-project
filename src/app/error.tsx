@@ -10,8 +10,7 @@ const Error = ({
     reset: () => void
 }) => {
     useEffect(() => {
-        // Log the error to an error reporting service
-        console.error(error);
+        // Error handled silently
     }, [error]);
 
     return (
