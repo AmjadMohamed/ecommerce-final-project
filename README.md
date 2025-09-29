@@ -6,15 +6,17 @@
 
 ## 🚀 Live Demo
 
-The application is deployed on **Vercel** and is accessible at: [Your Vercel Deployment URL]
+The application is deployed on **Vercel** and is accessible at: https://ecommerce-final-project-v2.vercel.app/
 
 ## 📹 Video Demonstration
 
 Watch the complete walkthrough of FreshCart features and functionality:
 
-[![FreshCart Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
-*Click the image above to watch the full demonstration video showcasing all features of the FreshCart e-commerce platform.*
+
+https://github.com/user-attachments/assets/092c489d-eb9c-4bbe-9d23-7bb5f6afdf4a
+
+
 
 ## 🛠️ Technologies & Libraries
 
