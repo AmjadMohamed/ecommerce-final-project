@@ -1,0 +1,10 @@
+/* Swiper pagination customization */
+.swiper-pagination-bullet {
+  background-color: #ccc;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #10b981;
+  opacity: 1;
+}
