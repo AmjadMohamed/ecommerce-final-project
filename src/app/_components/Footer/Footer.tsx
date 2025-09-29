@@ -29,7 +29,7 @@ const Footer = () => {
                                     <Input
                                         type="email"
                                         placeholder="Email.."
-                                        className="flex-1 border-gray-300"
+                                        className="flex-1 border-gray-300 bg-white"
                                     />
                                     <Button className='bg-green-500 hover:bg-green-600 text-white px-6 py-2 whitespace-nowrap cursor-pointer'>
                                         Share App Link
