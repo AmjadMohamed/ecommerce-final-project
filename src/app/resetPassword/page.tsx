@@ -39,8 +39,8 @@ const ResetPassword = () => {
       
       // Redirect to signin page after successful password reset
       router.push('/signin');
-    } catch (error: any) {
-      toast.error(error.response?.data?.message || "Failed to reset password", {
+    } catch (error: unknown) {
+      toast.error((error as { response?: { data?: { message?: string } } })?.response?.data?.message || "Failed to reset password", {
         position: "top-center",
         duration: 3000,
         icon: <i className="fa-solid fa-circle-xmark text-red-500"></i>

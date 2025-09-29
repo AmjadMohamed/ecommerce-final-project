@@ -2,11 +2,7 @@
 
 import { wishlistContext } from '@/context/WishlistContext'
 import React, { useContext } from 'react'
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
-import Image from "next/image";
-import Link from 'next/link';
 import { ProductRoot } from '@/types/product.type';
-import WishlistHeart from '../_components/WishlistHeart/WishlistHeart';
 import HomeCard from '../_components/HomeCard/HomeCard';
 
 const WishList = () => {

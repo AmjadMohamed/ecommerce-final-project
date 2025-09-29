@@ -4,7 +4,18 @@ import { getUserWishlistAction } from '@/apis/WishlistActions/getUserWishlist';
 import { ProductRoot } from '@/types/product.type';
 import React, { createContext, useEffect, useState } from 'react'
 
-export const wishlistContext = createContext({})
+interface WishlistContextType {
+    numOfWishlistItems: number;
+    products: ProductRoot[];
+    isLoading: boolean;
+    addProductToWishlist: (id: string) => Promise<unknown>;
+    removeWishlistItem: (id: string) => Promise<unknown>;
+    isInWishlist: (id: string) => boolean;
+    toggleWishlist: (id: string) => Promise<unknown>;
+    getUserWishlistData: () => Promise<void>;
+}
+
+export const wishlistContext = createContext<WishlistContextType>({} as WishlistContextType)
 
 const WishlistContextProvider = ({ children }: { children: React.ReactNode }) => {
 

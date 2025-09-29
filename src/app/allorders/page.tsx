@@ -22,7 +22,7 @@ const AllOrders = async () => {
                     <i className="fa-solid fa-receipt text-6xl text-gray-300"></i>
                 </div>
                 <h2 className="text-2xl font-semibold text-green-600 mb-2">No orders found</h2>
-                <p className="text-gray-500 mb-6">You haven't placed any orders yet!</p>
+                <p className="text-gray-500 mb-6">You haven&apos;t placed any orders yet!</p>
             </div>
         );
     }

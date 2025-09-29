@@ -11,7 +11,7 @@ import { wishlistContext } from '@/context/WishlistContext'
 import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const pathname = usePathname();
   const [openNav, setOpenNav] = useState(false);
 
@@ -23,7 +23,9 @@ const Navbar = () => {
   };
 
   const handleWindowResize = () => {
-    window.innerWidth >= 768 && setOpenNav(false);
+    if (window.innerWidth >= 768) {
+      setOpenNav(false);
+    }
   };
 
   useEffect(() => {

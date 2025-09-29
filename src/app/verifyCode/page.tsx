@@ -38,8 +38,8 @@ const VerifyCodePage = () => {
       
       // Redirect to reset password page after successful verification
       router.push('/resetPassword');
-    } catch (error: any) {
-      toast.error(error.response?.data?.message || "Invalid reset code", {
+    } catch (error: unknown) {
+      toast.error((error as { response?: { data?: { message?: string } } })?.response?.data?.message || "Invalid reset code", {
         position: "top-center",
         duration: 3000,
         icon: <i className="fa-solid fa-circle-xmark text-red-500"></i>
@@ -84,7 +84,7 @@ const VerifyCodePage = () => {
       
       <div className="mt-6 text-center">
         <p className="text-gray-600">
-          Didn't receive the code?{' '}
+          Didn&apos;t receive the code?{' '}
           <Link 
             href="/forgetPassword" 
             className="text-green-600 hover:text-green-700 font-medium transition-colors duration-200"

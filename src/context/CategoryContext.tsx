@@ -2,7 +2,16 @@ import { CategoryRoot } from '@/types/category.type';
 import getSubCategory from '@/apis/subCategory';
 import React, { createContext, useState } from 'react'
 
-export const categoryContext = createContext({})
+interface CategoryContextType {
+    selectedCategory: CategoryRoot | null;
+    subcategories: CategoryRoot[];
+    isLoading: boolean;
+    selectCategory: (category: CategoryRoot) => Promise<void>;
+    loadSubcategories: (categoryId: string) => Promise<void>;
+    clearCategory: () => void;
+}
+
+export const categoryContext = createContext<CategoryContextType>({} as CategoryContextType)
 
 const CategoryContextProvider = ({ children }: { children: React.ReactNode }) => {
 

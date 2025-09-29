@@ -1,7 +1,6 @@
 "use client"
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { categoryContext } from '@/context/CategoryContext';
-import Link from 'next/link';
 import { CategoryRoot } from '@/types/category.type';
 
 const SubCategory = () => {
@@ -30,7 +29,7 @@ const SubCategory = () => {
                         <i className="fa-solid fa-folder-open text-6xl text-gray-300"></i>
                     </div>
                     <h2 className="text-2xl font-semibold  text-green-600 mb-2">No Subcategories Found</h2>
-                    <p className="text-gray-500 mb-6">This category doesn't have any subcategories yet.</p>
+                    <p className="text-gray-500 mb-6">This category doesn&apos;t have any subcategories yet.</p>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

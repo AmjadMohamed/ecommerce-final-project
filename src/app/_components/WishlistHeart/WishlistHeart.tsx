@@ -12,7 +12,7 @@ const WishlistHeart = ({ productId }: { productId: string }) => {
             const wasInWishlist = isInWishlist(productId);
             const response = await toggleWishlist(productId);
 
-            if (response?.status === "success") {
+            if (response && typeof response === 'object' && 'status' in response && response.status === "success") {
                 if (wasInWishlist) {
                     toast.success("Item removed from your wishlist", {
                         position: "top-center",

@@ -2,7 +2,6 @@ import React from 'react'
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { ProductRoot } from '@/types/product.type';
 import AddCartButton from '../AddToCartButton/AddCartButton';
 import WishlistHeart from '../WishlistHeart/WishlistHeart';

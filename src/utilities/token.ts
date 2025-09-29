@@ -1,6 +1,5 @@
 "use server"
 
-import { jwtDecode } from "jwt-decode";
 import { decode } from "next-auth/jwt";
 import { cookies } from "next/headers";
 

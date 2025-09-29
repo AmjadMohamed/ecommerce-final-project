@@ -38,8 +38,8 @@ const ForgetPassword = () => {
       
       // Redirect to verify code page after successful code sending
       router.push('/verifyCode');
-    } catch (error: any) {
-      toast.error(error.response?.data?.message || "Something went wrong", {
+    } catch (error: unknown) {
+      toast.error((error as { response?: { data?: { message?: string } } })?.response?.data?.message || "Something went wrong", {
         position: "top-center",
         duration: 3000,
         icon: <i className="fa-solid fa-circle-xmark text-red-500"></i>

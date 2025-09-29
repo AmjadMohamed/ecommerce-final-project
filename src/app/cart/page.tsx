@@ -17,7 +17,7 @@ const Cart = () => {
   async function removeItem(id: string) {
     const data = await removeCartItem(id);
 
-    if (data.status === "success") {
+    if (data && data.status === "success") {
       toast.success("Item removed successfully", {
         position: "top-center",
         duration: 3000,
@@ -38,7 +38,7 @@ const Cart = () => {
   async function updateItemQuantity(id: string, count: number) {
     const data = await updateCartItemQuantity(id, count);
 
-    if (data.status === "success") {
+    if (data && data.status === "success") {
       toast.success("Item Quantity updated successfully", {
         position: "top-center",
         duration: 3000,

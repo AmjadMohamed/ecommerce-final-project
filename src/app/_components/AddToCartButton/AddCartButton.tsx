@@ -12,8 +12,8 @@ const AddCartButton = ({ id }: { id: string }) => {
 
     async function handleAddToCart() {
         const data = await addProductToCart(id);
-        if (data.status === "success") {
-            toast.success(data.message, {
+        if (data && data.status === "success") {
+            toast.success("Item added to cart successfully", {
                 position: "top-center",
                 duration: 3000,
                 icon: <i className="fa-solid fa-circle-check text-green-500"></i>

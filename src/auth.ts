@@ -1,8 +1,7 @@
-import { AuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { jwtDecode } from "jwt-decode"
 
-export const authOptions: AuthOptions = {
+export const authOptions = {
 
     pages: {
         signIn: '/signin'
@@ -28,7 +27,7 @@ export const authOptions: AuthOptions = {
                 console.log(payload);
 
                 if (payload.message === 'success') {
-                    const { id }: { id: string } = jwtDecode(payload.token);
+                    const { id }: { id: string } = jwtDecode(payload.token) as { id: string };
                     return {
                         id: id,
                         user: payload.user,
@@ -43,7 +42,7 @@ export const authOptions: AuthOptions = {
     ],
 
     callbacks: {
-        async jwt({ token, user }) {
+        async jwt({ token, user }: { token: Record<string, unknown>; user: Record<string, unknown> }) {
             if (user) {
                 token.user = user?.user;
                 token.token = user?.token;
@@ -52,7 +51,7 @@ export const authOptions: AuthOptions = {
             return token;
         },
 
-        async session({ session, token }) {
+        async session({ session, token }: { session: Record<string, unknown>; token: Record<string, unknown> }) {
             if (token) {
                 session.user = token?.user;
             }

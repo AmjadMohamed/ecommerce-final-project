@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { signUpSchema, SignUpSchemaType } from '@/schema/SignUp.schema'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -45,8 +45,8 @@ const SignUp = () => {
       setIsLoading(false);
       router.push("/signin");
     }
-    catch (error) {
-      toast.error(error.response.data.message, {
+    catch (error: unknown) {
+      toast.error((error as { response?: { data?: { message?: string } } })?.response?.data?.message || "An error occurred", {
         position: "top-center",
         duration: 3000,
         icon: <i className="fa-solid fa-circle-xmark text-red-500"></i>
