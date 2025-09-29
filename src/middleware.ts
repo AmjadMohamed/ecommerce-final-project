@@ -5,7 +5,8 @@ import { NextResponse, NextRequest } from 'next/server'
 export async function middleware(request: NextRequest) {
 
     const { pathname } = request.nextUrl;
-    const tkn = await getToken({ req: request })
+    const cookieName = process.env.NODE_ENV == 'production' ? '__Secure-next-auth.session-token' : 'next-auth.session-token';
+    const tkn = await getToken({ req: request, cookieName })
     const authPage = ["/signin", "signup", "/resetPassword", "/verifyCode", "/forgetPassword"];
     const routes = ["/", "/subCategory", "/wishlist", "/allOrders", "/payment", "/brands", "/cart", "/categories", "/products", "/productDetails"];
 
