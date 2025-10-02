@@ -1,11 +1,25 @@
-import { GetAllBrands } from '@/apis/BrandsActions/getAllBrands'
+"use client"
+
+import { brandsContext } from '@/context/BrandsContext';
 import { BrandsRoot } from '@/types/brands.type';
-import React from 'react'
-import Image from "next/image";
+import React, { useContext } from 'react'
+import BrandItem from '../_components/BrandItem/BrandItem';
+import BrandModal from '../_components/BrandModal/BrandModal';
 
-const Brands = async () => {
+const Brands = () => {
 
-  const { data }: { data: BrandsRoot[] } = await GetAllBrands();
+  const { brands, selectedBrand, isLoading, isModalOpen, closeModal } = useContext(brandsContext);
+
+  if (isLoading) {
+    return (
+      <div className="w-full md:w-[80%] mx-auto my-10 px-5 md:px-0 bg-slate-100">
+        <div className="p-5 text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading brands...</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className='w-full md:w-[80%] mx-auto my-10 px-5 md:px-0 bg-slate-100'>
@@ -21,24 +35,21 @@ const Brands = async () => {
         </div>
 
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
-          {data.map((brand: BrandsRoot, idx: number) => (
-            <div key={idx} className='bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow'>
-              <div className='aspect-square mb-3 overflow-hidden rounded-lg'>
-                <Image
-                  alt={brand.name}
-                  width={300}
-                  height={300}
-                  src={brand.image}
-                  className='w-full h-full object-contain'
-                />
-              </div>
-              <div className='text-center font-medium text-gray-800 truncate'>
-                {brand.name}
-              </div>
-            </div>
+          {brands.map((brand: BrandsRoot, idx: number) => (
+            <BrandItem 
+              key={idx} 
+              brand={brand}
+            />
           ))}
         </div>
       </div>
+
+      {/* Brand Modal */}
+      <BrandModal 
+        brand={selectedBrand}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </div>
   )
 }
